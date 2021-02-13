@@ -1,0 +1,37 @@
+img {
+  height: 400px;
+  width: 270px;
+  display: block;
+
+}
+
+.item-container {
+  display: grid;
+  grid-template-columns: 80px 270px auto;
+  column-gap: 10px;
+  grid-template-areas: 
+    ". picture desc";
+
+}
+
+.item-description {
+  grid-area: desc;
+  align-self: start;
+  display: grid;
+  justify-items: start;
+  grid-template-areas:
+  "name"
+  "price"
+  "cart";
+  grid-template-rows: 50px 1fr auto;
+  height: 100%;
+}
+
+.item-description h1, p {
+  margin: 0;
+}
+
+.image {
+  grid-area: picture;
+  object-fit: cover;
+}
