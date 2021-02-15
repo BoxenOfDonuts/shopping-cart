@@ -5,9 +5,12 @@ import './ItemDetail.css'
 const ItemDetail = (props) => {
   const {inventory} = props;
   const {id} = useParams();
-  console.log(id, inventory);
   let items = inventory.filter(item => item.id === Number(id));
   const item = items[0];
+
+  const getItem = () => {
+    props.addItemToCart(item)
+  }
 
   return (
     <div className="item-container">
@@ -17,7 +20,7 @@ const ItemDetail = (props) => {
       <div className="item-description">
         <h1>{item.name}</h1>
         <p>${item.price}</p>
-        <AddToCart />
+        <AddToCart addItemToCart={getItem} />
       </div>
     </div>
   );

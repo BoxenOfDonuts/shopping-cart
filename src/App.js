@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
+import { act } from 'react-dom/test-utils';
 import {
   BrowserRouter as Router,
   Switch,
@@ -69,15 +70,48 @@ const shoppingCart = [
   },
 ]
 
+const updateCartItems = (state, action) => {
+  console.log(state, action);
+  const index = state.cart.findIndex(cartItem => {
+    return cartItem.id === action.item.id
+  })
+  switch (action.id) {
+    case 'add':
+      const newCart = state.cart.slice()
+      if (index === -1) {
+        const item = {...action.item, quantity: 1}
+        return {cart: [...newCart, item]}
+      } else {
+        // why do these two lines work
+        const item = {...state.cart[index], quantity: state.cart[index].quantity + 1}
+        newCart.splice(index, 1, item)
+        newCart.splice(0, 1, null)
+        // but not this?
+        // state.cart[index].quantity = state.cart[index].quantity + 1;
+        return {cart: [...newCart]}
+      }
+      break;
+  
+    default:
+      break;
+  }
+}
+
 const App = () => {
+  // const [ shoppingCart, setShoppingCart ] = useState([]);
+  const [state, dispatch] = useReducer(updateCartItems, {cart: []})
+
   return (
     <Router>
-    <NavBar />
+    <NavBar cartCount={6} />
       <Switch>
         <Route exact path='/shop' component={Shop}/>
         <Route exact path='/cart' component={Cart}/>
         <Route exact path='/item/:id'>
-          <ItemDetail inventory={inventory} />
+          <ItemDetail
+            inventory={inventory}
+            addItemToCart={(item) => dispatch({id: 'add', item: item})}
+          />
         </Route>
         <Route exact path='/' component={Home}/>
       </Switch>
@@ -86,7 +120,13 @@ const App = () => {
 }
 
 
-const NavBar = () => {
+const NavBar = ({cartCount}) => {
+  let content = '';
+
+  if (cartCount) {
+    content = `(${cartCount})`
+  }
+
   return (
     <nav>
       <ul>
@@ -97,7 +137,7 @@ const NavBar = () => {
           <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">Cart {content}</Link>
         </li>
       </ul>
     </nav>
@@ -133,9 +173,18 @@ const Home = () => {
 const Cart  = (props) => {
   const items = shoppingCart.map(item => {
     return (
-      <CartItems
-        cartItem={item}
-      />
+      <>
+        <CartItems
+          cartItem={item}
+        />
+        <div className="item-description">
+          <h1>{item.name}</h1>
+          <p>${item.price}</p>
+          <p>{item.quantity}</p>
+          <button type='button'>+</button>
+          <button type='button'>-</button>
+        </div>
+      </>
     );
   })
 
