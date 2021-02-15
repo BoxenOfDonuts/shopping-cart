@@ -1,0 +1,18 @@
+.shop-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: center;
+}
+.shop-item {
+  margin: 20px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-weight: 500;
+  /* margin: 0 auto; */
+}
+
+.shop-item::after {
+  text-decoration: none;
+}
