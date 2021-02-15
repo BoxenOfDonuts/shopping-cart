@@ -72,38 +72,46 @@ const shoppingCart = [
 
 const updateCartItems = (state, action) => {
   console.log(state, action);
-  const index = state.cart.findIndex(cartItem => {
+  const index = state.findIndex(cartItem => {
     return cartItem.id === action.item.id
   })
   switch (action.id) {
     case 'add':
-      const newCart = state.cart.slice()
       if (index === -1) {
-        const item = {...action.item, quantity: 1}
-        return {cart: [...newCart, item]}
-      } else {
-        // why do these two lines work
-        const item = {...state.cart[index], quantity: state.cart[index].quantity + 1}
-        newCart.splice(index, 1, item)
-        newCart.splice(0, 1, null)
-        // but not this?
-        // state.cart[index].quantity = state.cart[index].quantity + 1;
-        return {cart: [...newCart]}
+        const item  = {...action.item, quantity: 1}
+        return [...state, item]
+      }  else {
+        const newCart = state.map((cartItem, cartIndex) => {
+          if (cartIndex === index) {
+            return {...cartItem, quantity: cartItem.quantity + 1}
+          }
+          return cartItem;
+        })
+        return [...newCart]
       }
       break;
   
     default:
+      
       break;
   }
 }
 
 const App = () => {
-  // const [ shoppingCart, setShoppingCart ] = useState([]);
-  const [state, dispatch] = useReducer(updateCartItems, {cart: []})
+  const [cart, dispatch] = useReducer(updateCartItems, [])
+  const [ cartCount, setCartCount ] = useState(cart);
+
+  useEffect(() => {
+    const count = cart.reduce((count, item) => {
+      return count + item.quantity;
+    }, 0);
+    setCartCount(count);
+
+  }, [cart])
 
   return (
     <Router>
-    <NavBar cartCount={6} />
+    <NavBar cartCount={cartCount} />
       <Switch>
         <Route exact path='/shop' component={Shop}/>
         <Route exact path='/cart' component={Cart}/>
@@ -123,7 +131,7 @@ const App = () => {
 const NavBar = ({cartCount}) => {
   let content = '';
 
-  if (cartCount) {
+  if (cartCount && cartCount > 0) {
     content = `(${cartCount})`
   }
 
