@@ -8,10 +8,8 @@ img {
   display: grid;
   grid-template-columns: 80px 270px auto;
   column-gap: 20px;
-  grid-template-areas: 
-    ". picture desc";
+  grid-template-areas: ". picture desc";
   margin-top: 30px;
-
 }
 
 .item-description {
@@ -20,14 +18,15 @@ img {
   display: grid;
   justify-items: start;
   grid-template-areas:
-  "name"
-  "price"
-  "cart";
+    "name"
+    "price"
+    "cart";
   grid-template-rows: 50px 1fr auto;
   height: 100%;
 }
 
-.item-description h1, p {
+.item-description h1,
+p {
   margin: 0;
 }
 

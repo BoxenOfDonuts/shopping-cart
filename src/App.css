@@ -4,11 +4,13 @@
 }
 
 :root {
-  --bg-color: #F2F2F2;
-  --outline-black: rgb(0,0,0);  
+  --bg-color: #f2f2f2;
+  --outline-black: rgb(0, 0, 0);
 }
 
-body, #root, html {
+body,
+#root,
+html {
   background-color: var(--bg-color);
   height: 100%;
   overflow: hidden;
@@ -16,7 +18,7 @@ body, #root, html {
 
 .homepage-wrapper {
   height: 100%;
-  background-image: url('./images/IMG_2119.jpeg');
+  background-image: url("./images/IMG_2119.jpeg");
   background-repeat: no-repeat;
   background-size: cover; /* Resize the background image to cover the entire container */
 }
@@ -30,21 +32,23 @@ body, #root, html {
   transform: translateY(-50%);
 }
 
-.homepage h1, .homepage button {
+.homepage h1,
+.homepage button {
   font-family: source-code-pro;
   font-size: 4rem;
-  text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+  text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
   text-align: center;
-
 }
 
 .homepage button {
   border: 1px solid black;
   color: white;
-  background-color: rgba(0,0,0, 0);
+  background-color: rgba(0, 0, 0, 0);
   padding: 5px 10px;
   border-radius: 10px;
-  text-shadow: -1px -1px 0 var(--outline-black), 1px -1px 0 var(--outline-black), -1px 1px 0 var(--outline-black), 1px 1px 0 var(--outline-black);
+  text-shadow: -1px -1px 0 var(--outline-black), 1px -1px 0 var(--outline-black),
+    -1px 1px 0 var(--outline-black), 1px 1px 0 var(--outline-black);
 }
 
 .homepage button {

@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-const NavBar = ({cartCount}) => {
-  let content = '';
+const NavBar = ({ cartCount }) => {
+  let content = "";
 
   if (cartCount && cartCount > 0) {
-    content = `(${cartCount})`
+    content = `(${cartCount})`;
   }
 
   return (
@@ -23,6 +23,6 @@ const NavBar = ({cartCount}) => {
       </ul>
     </nav>
   );
-}
+};
 
 export default NavBar;
