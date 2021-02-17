@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 import Cart from "./components/Cart/Cart";
 import NavBar from "./components/NavigationBar/Navbar";
@@ -62,7 +62,7 @@ const App = () => {
   }, [cart]);
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <NavBar cartCount={cartCount} />
       <Switch>
         <Route exact path="/shop">
