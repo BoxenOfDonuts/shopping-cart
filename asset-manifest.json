@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.4179746f.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.8a15d843.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.8a15d843.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.b6a2e420.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.b6a2e420.js.map",
+    "static/js/2.c1a5ac96.chunk.js": "/shopping-cart/static/js/2.c1a5ac96.chunk.js",
+    "static/js/2.c1a5ac96.chunk.js.map": "/shopping-cart/static/js/2.c1a5ac96.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.4179746f.chunk.css.map": "/shopping-cart/static/css/main.4179746f.chunk.css.map",
+    "static/js/2.c1a5ac96.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.c1a5ac96.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/shopping-cart/static/media/IMG_2119.0d509717.jpeg",
+    "static/media/french-fries.c5842e64.jpg": "/shopping-cart/static/media/french-fries.c5842e64.jpg",
+    "static/media/leather-jacket.beece5a2.jpg": "/shopping-cart/static/media/leather-jacket.beece5a2.jpg",
+    "static/media/long-sleeves.77c7bd5a.jpg": "/shopping-cart/static/media/long-sleeves.77c7bd5a.jpg",
+    "static/media/red-tiger.f2a20b0c.jpg": "/shopping-cart/static/media/red-tiger.f2a20b0c.jpg",
+    "static/media/reindeer.1ac273cb.jpg": "/shopping-cart/static/media/reindeer.1ac273cb.jpg",
+    "static/media/yellow-hat.edc81938.jpg": "/shopping-cart/static/media/yellow-hat.edc81938.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6a2e420.js",
+    "static/js/2.c1a5ac96.chunk.js",
+    "static/css/main.4179746f.chunk.css",
+    "static/js/main.8a15d843.chunk.js"
+  ]
+}
