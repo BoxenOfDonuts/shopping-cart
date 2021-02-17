@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   align-content: space-around;
   align-items: center;
+  margin-top: 30px;
 }
 .shop-item {
   margin: 20px;
@@ -10,7 +11,6 @@
   color: black;
   text-align: center;
   font-weight: 500;
-  /* margin: 0 auto; */
 }
 
 .shop-item::after {

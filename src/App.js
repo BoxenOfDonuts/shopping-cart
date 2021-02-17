@@ -10,6 +10,7 @@ import Cart from './components/Cart/Cart';
 import NavBar from './components/NavigationBar/Navbar';
 import Shop from './components/Shop/Shop';
 import inventory from './Inventory/Inventory.js';
+import './App.css';
 
 const updateCartItems = (state, action) => {
   console.log(state, action);
@@ -32,36 +33,7 @@ const updateCartItems = (state, action) => {
         return [...newCart]
       }
     }
-    // case 'increment': {
-    //   const newCart = state.map((cartItem, cartIndex) => {
-    //     if (cartIndex === index) {
-    //       return {...cartItem, quantity: cartItem.quantity + 1}
-    //     }
-    //     return cartItem
-    //   })
-    //   return [...newCart]
-    // }
-    // case 'decrement':
-    //   const newCart = state.reduce((array, cartItem, cartIndex) => {
-    //     if (cartIndex === index) {
-    //       if (cartItem.quantity === 1) {
-    //         return array.concat();
-    //       }
-    //       return array.concat({...cartItem, quantity: cartItem.quantity - 1});
-    //     }
-    //     return array.concat(cartItem)
-    //   },[])
-    //   console.log(newCart)
-    //   return [...newCart]
-    // case 'onChange': {
-    //   const newCart = state.map((cartItem, cartIndex) => {
-    //     if (cartIndex === index) {
-    //       return {...cartItem, quantity: action.quantity}
-    //     }
-    //     return cartItem
-    //   })
-    //   return [...newCart]
-    // }
+
     case 'update': {
       let newCart = [];
       if (action.quantity === 0) {
@@ -106,6 +78,7 @@ const App = () => {
           <Cart
             cart={cart}
             updateCartQuantity={dispatch}
+            cartCount={cartCount}
           />
 
         </Route>
@@ -123,7 +96,14 @@ const App = () => {
 
 const Home = () => {
   return (
-    <h1>Welcome to home</h1>
+    <div className="homepage-wrapper">
+      <div className="homepage">
+        <h1>Dogs In Sweaters (Plus a Hat!)</h1>
+        <Link to="/shop">
+          <button type='button'>Shop!</button>
+        </Link>
+      </div>
+    </div>
   );
 }
 

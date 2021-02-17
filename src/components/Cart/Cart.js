@@ -1,8 +1,13 @@
+import { Link } from 'react-router-dom';
+import './Cart.css';
+
 const Cart  = (props) => {
-  const { cart, updateCartQuantity } = props;
+  const { cart, cartCount, updateCartQuantity } = props;
   const total = cart.reduce((accum, item) => {
     return accum + (item.quantity * item.price);
   }, 0)
+  
+
 
   const items = cart.map(item => {
     return (
@@ -15,11 +20,14 @@ const Cart  = (props) => {
   })
 
   return (
-    <>
-      <h1>welcome to cart</h1>
+    <div className="cart-wrapper">
+      <h1>Shopping Cart</h1>
+      <div className="cart-header">
+        {cartCount > 0 && <p className="price right-align">Price</p>}
+      </div>
       {items}
-      <p className="total">Total: ${total}</p>
-    </>
+      {cartCount > 0 && <p className="total right-align">Total ({cartCount} items): <span className='bold'>${total}</span></p>}
+    </div>
   );
 }
 
@@ -33,27 +41,40 @@ const CartItem = (props) => {
 
   return (
     <div className="cart-item-container">
-      <img src={cartItem.img} alt={cartItem.name}/>
-      <div className="item-description">
+      <div className='item-image'>
+        <Link to={`/item/${cartItem.id}`}>
+          <img src={cartItem.img} alt={cartItem.name}/>
+        </Link>
+      </div>
+      <div className="cart-item-description">
           <h1>{cartItem.name}</h1>
+          <Selection
+            initialValue={cartItem.quantity}
+            values={Array.from(Array(11)).map((value,index)=>index)}
+            name={'quantity'}
+            onChange={updateCart}
+          />
+      </div>
+      <div className="cart-item-price right-align">
           <p>${cartItem.price}</p>
-          {/* <p>{cartItem.quantity}</p> */}
-          {/* <input value={cartItem.quantity} type='number' min="0" onChange={(e) => updateCartQuantity({id: 'onChange', item: cartItem, quantity: Number(e.target.value)})} /> */}
-          <Selection initialValue={cartItem.quantity} values={Array.from(Array(11)).map((value,index)=>index)} name={'quantity'} onChange={updateCart}/>
-          {/* <button type='button' onClick={() => updateCartQuantity({id: 'increment', item: cartItem})}>+</button>
-          <button type='button' onClick={() => updateCartQuantity({id: 'decrement', item: cartItem})}>-</button> */}
-        </div>
+      </div>
     </div>
   );
 }
 
 const Selection = ({ initialValue, values, name, onChange }) => {
+
   return (
     <>
+      <p style={{display: 'inline'}}>{'Quantity '}</p>
       <label htmlFor={name}></label>
       <select name={name} value={initialValue} onChange={onChange}>
         {values.map(value => {
-          return <option value={value}>{value}</option>
+          let postFix = '';
+          if (value === 0) {
+            postFix = ' (Delete)';
+          }
+          return <option value={value}>{value + postFix}</option>
         })}
       </select>
     </>

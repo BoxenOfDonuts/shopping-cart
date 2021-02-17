@@ -1,6 +1,5 @@
-import {
-  Link
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const NavBar = ({cartCount}) => {
   let content = '';
@@ -18,7 +17,7 @@ const NavBar = ({cartCount}) => {
         <li>
           <Link to="/shop">Shop</Link>
         </li>
-        <li>
+        <li className="flex-right">
           <Link to="/cart">Cart {content}</Link>
         </li>
       </ul>

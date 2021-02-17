@@ -13,7 +13,7 @@ const Shop = ({inventory}) => {
 
   return (
     <>
-      <h1>welcome to shop</h1>
+      {/* <h1>welcome to shop</h1> */}
       <div className='shop-wrapper'>
         {items}
       </div>

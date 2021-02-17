@@ -2,15 +2,15 @@ img {
   height: 400px;
   width: 270px;
   display: block;
-
 }
 
 .item-container {
   display: grid;
   grid-template-columns: 80px 270px auto;
-  column-gap: 10px;
+  column-gap: 20px;
   grid-template-areas: 
     ". picture desc";
+  margin-top: 30px;
 
 }
 
