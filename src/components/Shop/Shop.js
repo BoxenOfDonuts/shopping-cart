@@ -4,7 +4,7 @@ import "./Shop.css";
 const Shop = ({ inventory }) => {
   let items = inventory.map((item) => {
     return (
-      <Link to={`/item/${item.id}`} className="shop-item">
+      <Link key={item.name} to={`/item/${item.id}`} className="shop-item">
         <img src={item.img} alt={item.name} />
         <p>{item.name}</p>
       </Link>

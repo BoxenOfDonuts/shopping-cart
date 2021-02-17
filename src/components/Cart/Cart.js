@@ -79,7 +79,7 @@ const Selection = ({ initialValue, values, name, onChange }) => {
           if (value === 0) {
             postFix = " (Delete)";
           }
-          return <option value={value}>{value + postFix}</option>;
+          return <option key={value} value={value}>{value + postFix}</option>;
         })}
       </select>
     </>

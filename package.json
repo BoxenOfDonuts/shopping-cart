@@ -13,7 +13,7 @@
     "react-scripts": "4.0.2",
     "web-vitals": "^1.1.0"
   },
-  "homepage": "https://boxenofdonuts.github.io/shopping-cart/",
+  "homepage": "https://boxenofdonuts.github.io/shopping-cart",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

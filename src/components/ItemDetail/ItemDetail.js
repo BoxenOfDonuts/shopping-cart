@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { AddToCart } from "../buttons/AddToCart";
+import React from 'react';
 import "./ItemDetail.css";
 
 const ItemDetail = (props) => {
@@ -26,4 +27,7 @@ const ItemDetail = (props) => {
   );
 };
 
-export default ItemDetail;
+export default React.memo(ItemDetail, (prev, next) => {
+  console.log(prev.inventory)
+  return prev.inventory === next.inventory;
+});
