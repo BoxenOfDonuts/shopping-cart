@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 import Cart from "./components/Cart/Cart";
 import NavBar from "./components/NavigationBar/Navbar";
