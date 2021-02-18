@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.4179746f.chunk.css",
+    "main.css": "/shopping-cart/static/css/main.0295d7c2.chunk.css",
     "main.js": "/shopping-cart/static/js/main.57ffad3c.chunk.js",
     "main.js.map": "/shopping-cart/static/js/main.57ffad3c.chunk.js.map",
     "runtime-main.js": "/shopping-cart/static/js/runtime-main.b6a2e420.js",
@@ -8,7 +8,7 @@
     "static/js/2.c1a5ac96.chunk.js": "/shopping-cart/static/js/2.c1a5ac96.chunk.js",
     "static/js/2.c1a5ac96.chunk.js.map": "/shopping-cart/static/js/2.c1a5ac96.chunk.js.map",
     "index.html": "/shopping-cart/index.html",
-    "static/css/main.4179746f.chunk.css.map": "/shopping-cart/static/css/main.4179746f.chunk.css.map",
+    "static/css/main.0295d7c2.chunk.css.map": "/shopping-cart/static/css/main.0295d7c2.chunk.css.map",
     "static/js/2.c1a5ac96.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.c1a5ac96.chunk.js.LICENSE.txt",
     "static/media/App.css": "/shopping-cart/static/media/IMG_2119.0d509717.jpeg",
     "static/media/french-fries.c5842e64.jpg": "/shopping-cart/static/media/french-fries.c5842e64.jpg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.b6a2e420.js",
     "static/js/2.c1a5ac96.chunk.js",
-    "static/css/main.4179746f.chunk.css",
+    "static/css/main.0295d7c2.chunk.css",
     "static/js/main.57ffad3c.chunk.js"
   ]
 }
