@@ -22,3 +22,8 @@ nav a:hover {
   margin-left: auto;
   padding-right: 20px;
 }
+
+nav {
+  position: absolute;
+  width: 100vw;
+}
